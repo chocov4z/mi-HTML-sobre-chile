@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chile | Nación de contraste, innovación y grandeza</title>
+    <meta
+      name="description"
+      content="Descubre Chile: naturaleza, cultura, innovación, historia y diversidad territorial en una página web moderna y elegante."
+    />
+    <style>
+      :root {
+        --azul: #003366;
+        --azul-oscuro: #001d3d;
+        --rojo: #d52b1e;
+        --rojo-oscuro: #aa1d14;
+        --blanco: #f7f9fc;
+        --gris: #e8edf3;
+        --gris-texto: #58657a;
+        --text: #102033;
+        --sombra: 0 24px 60px rgba(0, 29, 61, 0.12);
+        --linea: rgba(16, 32, 51, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(213, 43, 30, 0.08), transparent 24%),
+          linear-gradient(180deg, #f5f7fb 0%, #eef3f8 100%);
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(12px);
+        background: rgba(247, 249, 252, 0.8);
+        border-bottom: 1px solid var(--linea);
+      }
+
+      .nav {
+        min-height: 78px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--azul-oscuro);
+        font-size: 0.8rem;
+      }
+
+      .brand-mark {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--rojo), var(--azul));
+        box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.08);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        flex-wrap: wrap;
+      }
+
+      .nav-links a {
+        font-size: 0.9rem;
+        color: var(--gris-texto);
+        font-weight: 700;
+        transition: color 0.2s ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--azul);
+      }
+
+      .hero {
+        padding: 78px 0 42px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 42px;
+        align-items: center;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 0.72rem;
+        font-weight: 800;
+        color: var(--rojo);
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 44px;
+        height: 2px;
+        background: var(--rojo);
+      }
+
+      h1 {
+        margin: 18px 0 16px;
+        font-size: clamp(2.8rem, 7vw, 5.5rem);
+        letter-spacing: -0.07em;
+        line-height: 0.9;
+        color: var(--azul-oscuro);
+      }
+
+      .highlight {
+        color: var(--rojo);
+      }
+
+      .lead {
+        max-width: 620px;
+        font-size: 1.08rem;
+        line-height: 1.85;
+        color: var(--gris-texto);
+      }
+
+      .cta-row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-top: 30px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 52px;
+        padding: 0 22px;
+        border-radius: 999px;
+        font-weight: 800;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+      }
+
+      .button-primary {
+        background: linear-gradient(135deg, var(--rojo), var(--rojo-oscuro));
+        color: white;
+        box-shadow: 0 18px 30px rgba(213, 43, 30, 0.24);
+      }
+
+      .button-secondary {
+        background: white;
+        color: var(--azul-oscuro);
+        border: 1px solid var(--linea);
+      }
+
+      .stats {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        flex-wrap: wrap;
+        margin-top: 34px;
+        padding-top: 24px;
+        border-top: 1px solid var(--linea);
+      }
+
+      .stat {
+        min-width: 120px;
+      }
+
+      .stat strong {
+        display: block;
+        font-size: clamp(1.5rem, 3vw, 2.2rem);
+        color: var(--azul-oscuro);
+        letter-spacing: -0.05em;
+      }
+
+      .stat span {
+        display: block;
+        margin-top: 6px;
+        color: var(--gris-texto);
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .hero-card {
+        position: relative;
+        background: linear-gradient(180deg, #0c1c2d, #0f2944 60%, #112b44 100%);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 36px;
+        overflow: hidden;
+        box-shadow: var(--sombra);
+      }
+
+      .hero-card img {
+        width: 100%;
+        height: 650px;
+        object-fit: cover;
+        filter: saturate(1.05) contrast(1.04);
+      }
+
+      .floating-badge {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 18px;
+        padding: 16px 18px;
+        color: white;
+        max-width: 220px;
+      }
+
+      .floating-badge small {
+        display: block;
+        font-size: 0.7rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .floating-badge strong {
+        display: block;
+        margin-top: 8px;
+        font-size: 1.1rem;
+        line-height: 1.35;
+      }
+
+      section {
+        padding: 32px 0 26px;
+      }
+
+      .section-heading {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 18px;
+        margin-bottom: 26px;
+      }
+
+      .section-heading h2 {
+        margin: 0;
+        font-size: clamp(2rem, 4vw, 3rem);
+        letter-spacing: -0.06em;
+        color: var(--azul-oscuro);
+      }
+
+      .section-heading span {
+        color: var(--gris-texto);
+        font-weight: 600;
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 22px;
+      }
+
+      .panel {
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid var(--linea);
+        border-radius: 24px;
+        padding: 28px;
+        box-shadow: 0 14px 28px rgba(10, 28, 45, 0.04);
+      }
+
+      .panel p {
+        margin: 0;
+        color: var(--gris-texto);
+        line-height: 1.9;
+        font-size: 1.02rem;
+      }
+
+      .feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: 18px;
+      }
+
+      .feature-list li {
+        position: relative;
+        padding-left: 28px;
+        color: var(--text);
+        font-size: 1.02rem;
+        line-height: 1.7;
+      }
+
+      .feature-list li::before {
+        content: "▪";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--rojo);
+        font-size: 1.4rem;
+      }
+
+      .showcase-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .showcase-card {
+        background: white;
+        border: 1px solid var(--linea);
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 14px 28px rgba(16, 32, 51, 0.04);
+      }
+
+      .showcase-card img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+      }
+
+      .showcase-card .body {
+        padding: 20px 20px 24px;
+      }
+
+      .showcase-card h3 {
+        margin: 0 0 10px;
+        color: var(--azul-oscuro);
+        font-size: 1.25rem;
+        letter-spacing: -0.04em;
+      }
+
+      .showcase-card p {
+        margin: 0;
+        color: var(--gris-texto);
+        line-height: 1.7;
+      }
+
+      .metrics {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 22px;
+      }
+
+      .metric-box {
+        background: linear-gradient(180deg, rgba(0, 51, 102, 0.04), rgba(213, 43, 30, 0.04));
+        border: 1px solid var(--linea);
+        border-radius: 24px;
+        padding: 26px 20px;
+        text-align: center;
+      }
+
+      .metric-box strong {
+        display: block;
+        font-size: clamp(1.8rem, 5vw, 2.8rem);
+        letter-spacing: -0.06em;
+        color: var(--azul-oscuro);
+      }
+
+      .metric-box span {
+        display: block;
+        margin-top: 10px;
+        color: var(--gris-texto);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .cta-box {
+        background: linear-gradient(135deg, rgba(0, 51, 102, 0.96), rgba(18, 38, 66, 0.98));
+        border-radius: 30px;
+        padding: 36px 28px;
+        text-align: center;
+        color: white;
+        box-shadow: var(--sombra);
+      }
+
+      .cta-box h3 {
+        margin: 0 0 14px;
+        font-size: clamp(2rem, 5vw, 3rem);
+        letter-spacing: -0.06em;
+      }
+
+      .cta-box p {
+        max-width: 700px;
+        margin: 0 auto 26px;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.8;
+        font-size: 1.03rem;
+      }
+
+      .footer {
+        padding: 28px 0 48px;
+        text-align: center;
+        color: var(--gris-texto);
+        font-size: 0.92rem;
+      }
+
+      @media (max-width: 900px) {
+        .hero-grid,
+        .about-grid,
+        .showcase-grid,
+        .metrics {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-card img {
+          height: 520px;
+        }
+
+        .section-heading {
+          align-items: start;
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .nav {
+          flex-direction: column;
+          padding: 14px 0 18px;
+        }
+
+        .nav-links {
+          justify-content: center;
+        }
+
+        .cta-row {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .button {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <a href="#inicio" class="brand">
+          <span class="brand-mark"></span>
+          Chile
+        </a>
+
+        <nav class="nav-links" aria-label="Menú principal">
+          <a href="#sobre-chile">Sobre Chile</a>
+          <a href="#naturaleza">Naturaleza</a>
+          <a href="#cultura">Cultura</a>
+          <a href="#innovacion">Innovación</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="inicio">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <span class="eyebrow">Nación de contrastes</span>
+            <h1>Chile, un país de <span class="highlight">gran belleza</span> y enorme potencial.</h1>
+            <p class="lead">
+              Desde el desierto más árido del mundo hasta los glaciares, volcanes y fiordos más espectaculares,
+              Chile reúne en una sola nación una diversidad geográfica, cultural y humana que inspira admiración y
+              respeto. Un país donde la innovación, la resiliencia y la identidad se expresan con fuerza.
+            </p>
+
+            <div class="cta-row">
+              <a class="button button-primary" href="#sobre-chile">Descubrir más</a>
+              <a class="button button-secondary" href="#naturaleza">Ver paisajes</a>
+            </div>
+
+            <div class="stats">
+              <div class="stat">
+                <strong>4.300</strong>
+                <span>km de costa</span>
+              </div>
+              <div class="stat">
+                <strong>2.000</strong>
+                <span>km de ancho</span>
+              </div>
+              <div class="stat">
+                <strong>600+</strong>
+                <span>volcanes</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card" aria-label="Paisaje de Chile">
+            <img
+              src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80"
+              alt="Paisajes de Chile con montañas y mar"
+            />
+            <div class="floating-badge">
+              <small>Patrimonio natural</small>
+              <strong>Desierto, cordillera, mar y glaciares en una sola nación.</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="sobre-chile">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Chile en pocas palabras</h2>
+            <span>Un país de identidad profunda</span>
+          </div>
+
+          <div class="about-grid">
+            <div class="panel">
+              <p>
+                Chile se encuentra situado en la costa occidental de América del Sur y se distingue por su longitud
+                y diversidad territorial. Su geografía va desde el extremo norte árido hasta los extremos australes
+                de Patagonia, pasando por valles fértiles, ciudades modernas, paisajes andinos y un océano Pacífico
+                de gran valor ecológico y cultural.
+              </p>
+            </div>
+
+            <div class="panel">
+              <ul class="feature-list">
+                <li>Un territorio de contrastes naturales y climáticos.</li>
+                <li>Una historia marcada por la resiliencia y la creatividad.</li>
+                <li>Una sociedad que combina tradición, educación y visión de futuro.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="naturaleza">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Naturaleza que asombra</h2>
+            <span>La riqueza de su geografía</span>
+          </div>
+
+          <div class="showcase-grid">
+            <article class="showcase-card">
+              <img
+                src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=900&q=80"
+                alt="Atacama y paisaje desértico"
+              />
+              <div class="body">
+                <h3>Desierto de Atacama</h3>
+                <p>Uno de los lugares más singulares del planeta, con cielos diáfanos, salares y una belleza casi lunar.</p>
+              </div>
+            </article>
+
+            <article class="showcase-card">
+              <img
+                src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=900&q=80"
+                alt="Paisaje andino"
+              />
+              <div class="body">
+                <h3>Andes y volcanes</h3>
+                <p>La cordillera anuncia un territorio de elevación, energía y majestad, con volcanes que forman parte del paisaje nacional.</p>
+              </div>
+            </article>
+
+            <article class="showcase-card">
+              <img
+                src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=900&q=80"
+                alt="Patagonia y fiordos"
+              />
+              <div class="body">
+                <h3>Patagonia</h3>
+                <p>Un mundo de fiordos, lagos y montañas que refleja la fuerza bruta y la calma de la naturaleza austral.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="cultura">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Una cultura viva</h2>
+            <span>Tradición, arte y comunidad</span>
+          </div>
+
+          <div class="metrics">
+            <div class="metric-box">
+              <strong>10</strong>
+              <span>regiones</span>
+            </div>
+            <div class="metric-box">
+              <strong>18M+</strong>
+              <span>habitantes</span>
+            </div>
+            <div class="metric-box">
+              <strong>500+</strong>
+              <span>años de historia</span>
+            </div>
+            <div class="metric-box">
+              <strong>100%</strong>
+              <span>identidad propia</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="innovacion">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Innovación con raíces profundas</h2>
+            <span>Chile mirando hacia el futuro</span>
+          </div>
+
+          <div class="about-grid">
+            <div class="panel">
+              <p>
+                Chile ha construido una reputación sólida en educación, ciencia, tecnología, minería y sostenibilidad.
+                Su capacidad para conectar tradición con progreso ha permitido consolidarse como un país de gran
+                resiliencia, pensado en el futuro sin perder la conexión con su territorio y sus comunidades.
+              </p>
+            </div>
+
+            <div class="panel">
+              <ul class="feature-list">
+                <li>Fortaleza económica respaldada por innovación y trabajo constante.</li>
+                <li>Compromiso con la investigación, el medio ambiente y el desarrollo regional.</li>
+                <li>Una sociedad abierta a la creatividad, la inclusión y el cambio.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="cta-box">
+            <h3>Chile merece ser admirado</h3>
+            <p>
+              Un país donde la naturaleza se vuelve símbolo, la historia se vuelve identidad y el futuro se construye
+              con rigor, creatividad y visión. Chile no solo existe: se siente, se vive y se recuerda.
+            </p>
+            <a class="button button-primary" href="#inicio">Volver al inicio</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      Chile • Tierra de contrastes, belleza y futuro
+    </footer>
+  </body>
+</html>
